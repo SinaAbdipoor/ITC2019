@@ -9,7 +9,7 @@ import java.util.Arrays;
  * Created by Sina on 17-Dec-21
  *
  * @author Sina
- * @version 0.4
+ * @version 0.5
  */
 class TravelTime {
     private static TravelTime travelTimeInstance = null;
@@ -20,13 +20,30 @@ class TravelTime {
     }
 
     /**
-     * Constructs a SINGLETON travel time object.
+     * Initializes (creates an instance for) the static constructor of this singleton class. This method has to be
+     * performed FIRST (only once) to have the object of this class.
      *
-     * @param roomNo The number of all rooms.
-     * @return The travel time object.
+     * @param roomNo The total number of rooms in the problem instance.
+     * @return The object or instance of this singleton class.
+     * @throws ExceptionInInitializerError If this class has been initialized before.
      */
-    static TravelTime getInstance(int roomNo) {
-        if (travelTimeInstance == null) travelTimeInstance = new TravelTime(roomNo);
+    static TravelTime createInstance(int roomNo) throws ExceptionInInitializerError {
+        if (travelTimeInstance != null)
+            throw new ExceptionInInitializerError("An object of this singleton class has already been created.");
+        travelTimeInstance = new TravelTime(roomNo);
+        return travelTimeInstance;
+    }
+
+    /**
+     * Returns the singleton instance of travel time.
+     *
+     * @return The travel time instance
+     * @throws NullPointerException If this singleton class has not yet been initialized or created.
+     */
+    static TravelTime getInstance() throws NullPointerException {
+        if (travelTimeInstance == null)
+            throw new NullPointerException("An object of this singleton class must be created first (using the "
+                    + "createInstance method).");
         return travelTimeInstance;
     }
 
