@@ -6,7 +6,7 @@ package com.utils;
  * Created by Sina on 17-Mar-22
  *
  * @author Sina
- * @version 0.2
+ * @version 0.3
  */
 public class LogicalOperators {
 
