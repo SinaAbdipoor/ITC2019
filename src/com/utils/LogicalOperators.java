@@ -1,5 +1,7 @@
 package com.utils;
 
+import java.util.NoSuchElementException;
+
 /**
  * This class implements some basic logical operators.
  * <p>
@@ -59,5 +61,18 @@ public class LogicalOperators {
         for (int i = 0; i < a.length; i++)
             if (a[i] && b[i]) return false;
         return true;
+    }
+
+    /**
+     * Returns the index of the first occurrence of a true value in the given boolean array.
+     *
+     * @param booleans The input boolean array.
+     * @return The index of the first true in the given boolean array.
+     * @throws NoSuchElementException If the given boolean array does not contain a true value.
+     */
+    public static int firstTrueIndex(boolean[] booleans) throws NoSuchElementException {
+        for (int i = 0; i < booleans.length; i++)
+            if (booleans[i]) return i;
+        throw new NoSuchElementException("The given boolean array does not contain a true value.");
     }
 }
