@@ -16,7 +16,7 @@ import com.utils.LogicalOperators;
  * Created by Sina on 11-Mar-22
  *
  * @author Sina
- * @version 0.2
+ * @version 0.3
  */
 class SameDays extends DistributionConstraint {
     /**
