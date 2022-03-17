@@ -12,7 +12,7 @@ import java.util.Arrays;
  * @author Sina
  * @version 0.6
  */
-class Room {
+public class Room {
     private final int id;
     private final int capacity;
     private final Time[] unavailable;
@@ -38,7 +38,7 @@ class Room {
      *
      * @return Room id.
      */
-    int getId() {
+    public int getId() {
         return id;
     }
 

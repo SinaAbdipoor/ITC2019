@@ -11,7 +11,7 @@ import java.util.Arrays;
  * @author Sina
  * @version 0.5
  */
-class TravelTime {
+public class TravelTime {
     private static TravelTime travelTimeInstance = null;
     private final int[][] travelTime;
 
@@ -40,7 +40,7 @@ class TravelTime {
      * @return The travel time instance
      * @throws NullPointerException If this singleton class has not yet been initialized or created.
      */
-    static TravelTime getInstance() throws NullPointerException {
+    public static TravelTime getInstance() throws NullPointerException {
         if (travelTimeInstance == null)
             throw new NullPointerException("An object of this singleton class must be created first (using the "
                     + "createInstance method).");
@@ -55,7 +55,7 @@ class TravelTime {
      * @return The number of timeslots needed to go from room 1 to room 2.
      * @throws ArrayIndexOutOfBoundsException If the given index is < 0 or >= size.
      */
-    int getTravelTime(int id1, int id2) throws ArrayIndexOutOfBoundsException {
+    public int getTravelTime(int id1, int id2) throws ArrayIndexOutOfBoundsException {
         return travelTime[id1 - 1][id2 - 1];
     }
 
