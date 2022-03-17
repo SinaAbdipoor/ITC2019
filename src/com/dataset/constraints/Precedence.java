@@ -24,7 +24,7 @@ import com.utils.LogicalOperators;
  * Created by Sina on 17-Mar-22
  *
  * @author Sina
- * @version 0.1
+ * @version 0.2
  */
 class Precedence extends DistributionConstraint {
     /**

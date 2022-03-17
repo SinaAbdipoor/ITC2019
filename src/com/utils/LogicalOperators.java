@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
  * Created by Sina on 17-Mar-22
  *
  * @author Sina
- * @version 0.3
+ * @version 0.4
  */
 public class LogicalOperators {
 
