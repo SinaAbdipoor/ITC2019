@@ -15,6 +15,7 @@ import com.utils.Event;
  * @version 0.1
  */
 class DifferentTime extends DistributionConstraint {
+
     /**
      * Constructs a DifferentTime constraint object over the given classes.
      *

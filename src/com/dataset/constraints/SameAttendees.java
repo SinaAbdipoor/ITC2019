@@ -21,8 +21,9 @@ import com.utils.LogicalOperators;
  * @version 0.1
  */
 class SameAttendees extends DistributionConstraint {
+
     /**
-     * Constructs a distribution constraint over the given classes.
+     * Constructs a SameAttendees constraint object over the given classes.
      *
      * @param classes The list of classes that this constraint is applied to.
      */

@@ -27,8 +27,9 @@ import com.utils.LogicalOperators;
  * @version 0.2
  */
 class Precedence extends DistributionConstraint {
+
     /**
-     * Constructs a distribution constraint over the given classes.
+     * Constructs a Precedence constraint object over the given classes.
      *
      * @param classes The list of classes that this constraint is applied to.
      */

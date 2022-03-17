@@ -16,8 +16,9 @@ import com.utils.LogicalOperators;
  * @version 0.2
  */
 class Overlap extends DistributionConstraint {
+
     /**
-     * Constructs a distribution constraint over the given classes.
+     * Constructs an Overlap constraint object over the given classes.
      *
      * @param classes The list of classes that this constraint is applied to.
      */

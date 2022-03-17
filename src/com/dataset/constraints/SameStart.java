@@ -14,6 +14,7 @@ import com.utils.Event;
  * @version 0.2
  */
 class SameStart extends DistributionConstraint {
+
     /**
      * Constructs a SameStart constraint object over the given classes.
      *

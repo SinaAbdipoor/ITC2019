@@ -14,8 +14,9 @@ import com.utils.Event;
  * @version 0.1
  */
 class SameRoom extends DistributionConstraint {
+
     /**
-     * Constructs a distribution constraint over the given classes.
+     * Constructs a SameRoom constraint object over the given classes.
      *
      * @param classes The list of classes that this constraint is applied to.
      */

@@ -15,6 +15,12 @@ import com.utils.LogicalOperators;
  * @version 0.2
  */
 class DifferentDays extends DistributionConstraint {
+
+    /**
+     * Constructs a DifferentDays constraint object over the given classes.
+     *
+     * @param classes The list of classes that this constraint is applied to.
+     */
     DifferentDays(Class[] classes) {
         super(classes);
     }

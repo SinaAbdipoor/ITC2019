@@ -17,6 +17,7 @@ import com.utils.Event;
  * @version 0.1
  */
 class SameTime extends DistributionConstraint {
+
     /**
      * Constructs a SameTime constraint object over the given classes.
      *
