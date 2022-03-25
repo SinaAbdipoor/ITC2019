@@ -17,7 +17,7 @@ import com.utils.LogicalOperators;
  * @author Sina
  * @version 0.1
  */
-class WorkDays extends DistributionConstraint {
+class WorkDays extends PairDistributionConstraint {
     private final int maxGap;                                                                                           // S
 
     /**

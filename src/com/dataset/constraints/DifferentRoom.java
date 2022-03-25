@@ -12,7 +12,7 @@ import com.utils.Event;
  * @author Sina
  * @version 0.1
  */
-class DifferentRoom extends DistributionConstraint {
+class DifferentRoom extends PairDistributionConstraint {
 
     /**
      * Constructs a DifferentRoom constraint object over the given classes.

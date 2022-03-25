@@ -16,7 +16,7 @@ import com.utils.LogicalOperators;
  * @author Sina
  * @version 0.2
  */
-class SameWeeks extends DistributionConstraint {
+class SameWeeks extends PairDistributionConstraint {
 
     /**
      * Constructs a SameWeeks constraint object over the given classes.

@@ -15,7 +15,7 @@ import com.utils.LogicalOperators;
  * @author Sina
  * @version 0.2
  */
-class NotOverlap extends DistributionConstraint {
+class NotOverlap extends PairDistributionConstraint {
 
     /**
      * Constructs a NotOverlap constraint object over the given classes.

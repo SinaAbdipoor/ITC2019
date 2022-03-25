@@ -13,7 +13,7 @@ import com.utils.Event;
  * @author Sina
  * @version 0.1
  */
-class SameRoom extends DistributionConstraint {
+class SameRoom extends PairDistributionConstraint {
 
     /**
      * Constructs a SameRoom constraint object over the given classes.

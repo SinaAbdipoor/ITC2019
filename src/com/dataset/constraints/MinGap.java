@@ -16,7 +16,7 @@ import com.utils.LogicalOperators;
  * @author Sina
  * @version 0.1
  */
-class MinGap extends DistributionConstraint {
+class MinGap extends PairDistributionConstraint {
     private final int minGap;
 
     /**

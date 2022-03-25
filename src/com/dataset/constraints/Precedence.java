@@ -26,7 +26,7 @@ import com.utils.LogicalOperators;
  * @author Sina
  * @version 0.2
  */
-class Precedence extends DistributionConstraint {
+class Precedence extends PairDistributionConstraint {
 
     /**
      * Constructs a Precedence constraint object over the given classes.

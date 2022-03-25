@@ -15,7 +15,7 @@ import com.utils.LogicalOperators;
  * @author Sina
  * @version 0.2
  */
-class Overlap extends DistributionConstraint {
+class Overlap extends PairDistributionConstraint {
 
     /**
      * Constructs an Overlap constraint object over the given classes.

@@ -14,7 +14,7 @@ import com.utils.LogicalOperators;
  * @author Sina
  * @version 0.2
  */
-class DifferentDays extends DistributionConstraint {
+class DifferentDays extends PairDistributionConstraint {
 
     /**
      * Constructs a DifferentDays constraint object over the given classes.

@@ -20,7 +20,7 @@ import com.utils.LogicalOperators;
  * @author Sina
  * @version 0.1
  */
-class SameAttendees extends DistributionConstraint {
+class SameAttendees extends PairDistributionConstraint {
 
     /**
      * Constructs a SameAttendees constraint object over the given classes.

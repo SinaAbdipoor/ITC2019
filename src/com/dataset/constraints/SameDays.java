@@ -18,7 +18,7 @@ import com.utils.LogicalOperators;
  * @author Sina
  * @version 0.3
  */
-class SameDays extends DistributionConstraint {
+class SameDays extends PairDistributionConstraint {
 
     /**
      * Constructs a SameDays constraint object over the given classes.
