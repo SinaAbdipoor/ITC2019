@@ -3,14 +3,14 @@ package com.dataset.constraints;
 import com.utils.Event;
 
 /**
- * This class represents a violation (a pair of events (scheduled classes) do not satisfy a distribution constraint
- * according to its logic and list of applied classes. Keeping track of violations helps in determining
- * which constraints are causing issues for a method.
+ * This class represents a violation (a pair of events (scheduled classes) or a single event) that do/does not satisfy
+ * a distribution constraint according to its logic and list of applied classes. Keeping track of violations helps in
+ * determining which constraints are causing issues for a method.
  * <p>
  * Created by Sina on 10-Mar-22
  *
  * @author Sina
- * @version 0.2
+ * @version 0.3
  */
 class Violation {
     private final Event event1, event2;
@@ -22,7 +22,8 @@ class Violation {
      * @param event1                 The first event (scheduled class) of the event pair of the given candidate
      *                               solution (timetable) that caused this violation.
      * @param event2                 The second event (scheduled class) of the event pair of the given candidate
-     *                               solution (timetable) that caused this violation.
+     *                               solution (timetable) that caused this violation. IN CASE OF SINGLE DISTRIBUTION
+     *                               CONSTRAINTS, THIS IS NULL.
      * @param distributionConstraint The distribution constraint that the given event pair violated.
      */
     Violation(Event event1, Event event2, DistributionConstraint distributionConstraint) {
@@ -43,7 +44,7 @@ class Violation {
 
     /**
      * Returns The first event (scheduled class) of the event pair of the given candidate solution (timetable) that
-     * caused this violation.
+     * caused this violation. Returns null in case of single distribution constraints.
      *
      * @return Event 2.
      */

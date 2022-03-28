@@ -15,7 +15,7 @@ import java.util.Arrays;
  * Created by Sina on 19-Feb-22
  *
  * @author Sina
- * @version 0.4
+ * @version 0.5
  */
 public class Event {
 
@@ -48,10 +48,9 @@ public class Event {
     /**
      * Returns the current time assigned to this event's class.
      *
-     * @return Current time assignment.
-     * @throws NullPointerException If no time has been assigned to this event's class yet.
+     * @return Current time assignment. Returns null if no time has been assigned to this event's class yet.
      */
-    public TimeAssignment getTimeAssignment() throws NullPointerException {
+    public TimeAssignment getTimeAssignment() {
         return timeAssignment;
     }
 
@@ -60,11 +59,10 @@ public class Event {
      * <p>
      * IMPORTANT: Some classes do not require a room. In which case, this getter simply returns null.
      *
-     * @return Current room assignment.
-     * @throws NullPointerException If this event's class does not require a room or if no room has been assigned to
-     *                              this event's class yet.
+     * @return Current room assignment. Returns null if this event's class does not require a room or if no room has
+     * been assigned to this event's class yet.
      */
-    public RoomAssignment getRoomAssignment() throws NullPointerException {
+    public RoomAssignment getRoomAssignment() {
         return roomAssignment;
     }
 
@@ -90,7 +88,6 @@ public class Event {
      * @throws IllegalArgumentException If the given time assignment is in the possible time assignments of this
      *                                  event's class (only when the first if in this method is performed -> increasing
      *                                  the running time from O(1) to O(n)).
-     * @throws NullPointerException     If this event's class or the given time assignment is null.
      */
     int setTimeAssignment(TimeAssignment timeAssignment) throws IllegalArgumentException {
         //TODO OPTIMIZATION: For faster running time, comment the following if. However, doing so will allow invalid
@@ -122,9 +119,8 @@ public class Event {
      * @throws IllegalArgumentException If the given room assignment is in the possible room assignments of this
      *                                  event's class (only when the first if in this method is performed -> increasing
      *                                  the running time from O(1) to O(n)).
-     * @throws NullPointerException     If this event's class or the given room assignment is null.
      */
-    int setRoomAssignment(RoomAssignment roomAssignment) throws IllegalArgumentException, NullPointerException {
+    int setRoomAssignment(RoomAssignment roomAssignment) throws IllegalArgumentException {
         //TODO OPTIMIZATION: For faster running time, comment the following if. However, doing so will allow invalid
         // (not included in the possible room assignments of this event's class) room assignments.
         if (!Arrays.asList(theClass.getPossibleRoomAssignments()).contains(roomAssignment))

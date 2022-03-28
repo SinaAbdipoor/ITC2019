@@ -16,7 +16,7 @@ import java.util.Arrays;
  * Created by Sina on 28-Feb-22
  *
  * @author Sina
- * @version 0.2
+ * @version 0.3
  */
 public class Timetable {
 
@@ -89,10 +89,10 @@ public class Timetable {
      * Returns the list of all events in this timetable that have not been scheduled (their class has not been assigned
      * a time and a room (if needed)) yet.
      *
-     * @return The list of unscheduled events in this timetable.
-     * @throws NullPointerException If all events in this timetable are not set (added).
+     * @return The list of unscheduled events in this timetable. Returns null if all events in this timetable are not
+     * set (added).
      */
-    ArrayList<Event> getUnscheduledEvents() throws NullPointerException {
+    ArrayList<Event> getUnscheduledEvents() {
         ArrayList<Event> unScheduledEvents = new ArrayList<>();
         for (Event event : events)
             if (!event.isScheduled()) unScheduledEvents.add(event);
