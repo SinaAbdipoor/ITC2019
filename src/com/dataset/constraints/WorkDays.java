@@ -15,13 +15,13 @@ import com.utils.LogicalOperators;
  * Created by Sina on 17-Mar-22
  *
  * @author Sina
- * @version 0.1
+ * @version 0.2
  */
 class WorkDays extends PairDistributionConstraint {
     private final int maxGap;                                                                                           // S
 
     /**
-     * Constructs a WorkDays constraint object over the given classes.
+     * Constructs a WorkDays constraint object over the given classes and maxGap.
      *
      * @param classes The list of classes that this constraint is applied to.
      * @param maxGap  The maximum number of timeslots allowed between the start of the first class and the end of the

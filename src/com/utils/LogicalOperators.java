@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
  * Created by Sina on 17-Mar-22
  *
  * @author Sina
- * @version 0.4
+ * @version 0.5
  */
 public class LogicalOperators {
 
@@ -74,5 +74,18 @@ public class LogicalOperators {
         for (int i = 0; i < booleans.length; i++)
             if (booleans[i]) return i;
         throw new NoSuchElementException("The given boolean array does not contain a true value.");
+    }
+
+    /**
+     * Returns the count of true values in the given boolean array.
+     *
+     * @param booleans The input boolean array.
+     * @return True values count.
+     */
+    public static int countTrueValues(boolean[] booleans) {
+        int trueCounter = 0;
+        for (boolean b : booleans)
+            if (b) trueCounter++;
+        return trueCounter;
     }
 }

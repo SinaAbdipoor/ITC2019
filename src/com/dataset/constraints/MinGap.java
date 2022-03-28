@@ -14,13 +14,13 @@ import com.utils.LogicalOperators;
  * Created by Sina on 17-Mar-22
  *
  * @author Sina
- * @version 0.1
+ * @version 0.2
  */
 class MinGap extends PairDistributionConstraint {
     private final int minGap;
 
     /**
-     * Constructs a MinGap constraint object over the given classes.
+     * Constructs a MinGap constraint object over the given classes and minGap.
      *
      * @param classes The list of classes that this constraint is applied to.
      * @param minGap  The minimum number of timeslots needed between any two classes that are taught on the same day.
