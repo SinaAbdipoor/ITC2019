@@ -8,14 +8,14 @@ import java.util.ArrayList;
 
 /**
  * This abstract class represents a pair distribution constraint as defined in the ITC 2019 dataset. A distribution
- * constraint can either be pair or single. While a pair distribution constraint is applied and check over a pair of
- * events (scheduled classes), a single distribution constraint evaluates and performs the check method over a single
- * event (scheduled class). The necessary check methods for violations are also added here.
+ * constraint can either be pair or can be over a list of classes. While a pair distribution constraint is applied and
+ * checked over a pair of events (scheduled classes), others evaluate and perform the check method over features of a
+ * list of events (scheduled classes). The necessary check methods for violations are also added here.
  * <p>
  * Created by Sina on 25-Mar-22
  *
  * @author Sina
- * @version 0.1
+ * @version 0.2
  */
 abstract class PairDistributionConstraint extends DistributionConstraint {
 
