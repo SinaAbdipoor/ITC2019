@@ -15,7 +15,7 @@ import java.util.Arrays;
  * Created by Sina on 10-Mar-22
  *
  * @author Sina
- * @version 0.3
+ * @version 0.4
  */
 abstract class DistributionConstraint {
     private final Class[] classes;
@@ -50,22 +50,25 @@ abstract class DistributionConstraint {
      *
      * @param timetable A candidate, or possible, solution.
      * @return True if the input timetable satisfies this constraint for all its classes, and false otherwise.
+     * @throws NullPointerException If a given timetable is not fully scheduled.
      */
-    abstract boolean isSatisfied(Timetable timetable);
+    abstract boolean isSatisfied(Timetable timetable) throws NullPointerException;
 
     /**
      * Counts the number of times that the given timetable violates this constraint over its classes.
      *
      * @param timetable A candidate, or possible, solution.
      * @return Violations count of the input timetable.
+     * @throws NullPointerException If a given timetable is not fully scheduled.
      */
-    abstract int violationCount(Timetable timetable);
+    abstract int violationCount(Timetable timetable) throws NullPointerException;
 
     /**
      * Returns the list of all violations of the given timetable for this distribution constraint.
      *
      * @param timetable A candidate, or possible, solution.
      * @return Violations list.
+     * @throws NullPointerException If a given timetable is not fully scheduled.
      */
-    abstract ArrayList<Violation> getViolations(Timetable timetable);
+    abstract ArrayList<Violation> getViolations(Timetable timetable) throws NullPointerException;
 }

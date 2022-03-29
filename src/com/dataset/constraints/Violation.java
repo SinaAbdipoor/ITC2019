@@ -10,7 +10,7 @@ import com.utils.Event;
  * Created by Sina on 10-Mar-22
  *
  * @author Sina
- * @version 0.3
+ * @version 0.4
  */
 class Violation {
     private final Event event1, event2;
@@ -20,9 +20,10 @@ class Violation {
      * Constructs a violation object.
      *
      * @param event1                 The first event (scheduled class) of the event pair of the given candidate
-     *                               solution (timetable) that caused this violation.
+     *                               solution (timetable) that caused this violation. IN CASE OF LIST DISTRIBUTION
+     *                               CONSTRAINTS, THIS IS NULL.
      * @param event2                 The second event (scheduled class) of the event pair of the given candidate
-     *                               solution (timetable) that caused this violation. IN CASE OF SINGLE DISTRIBUTION
+     *                               solution (timetable) that caused this violation. IN CASE OF LIST DISTRIBUTION
      *                               CONSTRAINTS, THIS IS NULL.
      * @param distributionConstraint The distribution constraint that the given event pair violated.
      */
@@ -34,7 +35,7 @@ class Violation {
 
     /**
      * Returns The first event (scheduled class) of the event pair of the given candidate solution (timetable) that
-     * caused this violation.
+     * caused this violation. Returns null in case of list distribution constraints.
      *
      * @return Event 1.
      */
@@ -44,7 +45,7 @@ class Violation {
 
     /**
      * Returns The first event (scheduled class) of the event pair of the given candidate solution (timetable) that
-     * caused this violation. Returns null in case of single distribution constraints.
+     * caused this violation. Returns null in case of list distribution constraints.
      *
      * @return Event 2.
      */
