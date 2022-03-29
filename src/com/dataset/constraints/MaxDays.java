@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * Created by Sina on 29-Mar-22
  *
  * @author Sina
- * @version 0.1
+ * @version 0.2
  */
 class MaxDays extends DistributionConstraint {
     private final int maxDays;
@@ -40,7 +40,7 @@ class MaxDays extends DistributionConstraint {
             for (Class aClass : getClasses())
                 if (timetable.getEvent(aClass.getId()).getTimeAssignment().getTime().getDays()[i]) {
                     trueCounter++;
-                    continue;
+                    break;
                 }
         }
         return true;
@@ -53,7 +53,7 @@ class MaxDays extends DistributionConstraint {
             for (Class aClass : getClasses())
                 if (timetable.getEvent(aClass.getId()).getTimeAssignment().getTime().getDays()[i]) {
                     trueCounter++;
-                    continue;
+                    break;
                 }
         }
         return (trueCounter <= maxDays) ? 0 : (trueCounter - maxDays);
