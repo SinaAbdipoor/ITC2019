@@ -22,7 +22,7 @@ class MaxDays extends DistributionConstraint {
     private final int maxDays;
 
     /**
-     * Constructs a MaxDays object over the given classes and maxDays.
+     * Constructs a MaxDays constraint object over the given classes and maxDays.
      *
      * @param classes The list of classes that this constraint is applied to.
      * @param maxDays The maximum number of days the given classes are allowed to spread over.
@@ -35,7 +35,7 @@ class MaxDays extends DistributionConstraint {
     @Override
     boolean isSatisfied(Timetable timetable) {
         int trueCounter = 0;
-        for (int i = 0; i < getDaysLength(timetable); i++) {
+        for (int i = 0; i < timetable.getDaysLength(); i++) {
             if (trueCounter > maxDays) return false;
             for (Class aClass : getClasses())
                 if (timetable.getEvent(aClass.getId()).getTimeAssignment().getTime().getDays()[i]) {
@@ -49,7 +49,7 @@ class MaxDays extends DistributionConstraint {
     @Override
     int violationCount(Timetable timetable) {
         int trueCounter = 0;
-        for (int i = 0; i < getDaysLength(timetable); i++) {
+        for (int i = 0; i < timetable.getDaysLength(); i++) {
             for (Class aClass : getClasses())
                 if (timetable.getEvent(aClass.getId()).getTimeAssignment().getTime().getDays()[i]) {
                     trueCounter++;
@@ -62,30 +62,8 @@ class MaxDays extends DistributionConstraint {
     @Override
     ArrayList<Violation> getViolations(Timetable timetable) {
         ArrayList<Violation> violations = new ArrayList<>();
-        violations.add(new Violation(null, null, this));
+        if (!isSatisfied(timetable))
+            violations.add(new Violation(null, null, this));
         return violations;
-    }
-
-    /**
-     * Returns the length of the days boolean arrays of the corresponding events of the given classes in the timetable.
-     *
-     * @param timetable A candidate, or possible, solution.
-     * @return Events.getTimeAssignment().getTime().getDays().length.
-     * @throws IllegalArgumentException If the days boolean arrays of events are of different lengths.
-     */
-    private int getDaysLength(Timetable timetable) throws IllegalArgumentException {
-        final int daysLength
-                = timetable.getEvent(getClasses()[0].getId()).getTimeAssignment().getTime().getDays().length;
-
-        //TODO OPTIMIZATION: For faster running time, comment the following if. However, doing so will result in
-        // incorrect operation of this method. Make sure that the given boolean arrays ALWAYS have same lengths before
-        // removing this check.
-        for (Class aClass : getClasses())
-            if (timetable.getEvent(aClass.getId()).getTimeAssignment().getTime().getDays().length != daysLength)
-                throw new IllegalArgumentException("The corresponding events of the given classes have days boolean "
-                        + "arrays of different lengths");
-        // COMMENT UNTIL HERE
-
-        return daysLength;
     }
 }

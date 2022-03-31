@@ -91,11 +91,54 @@ public class Timetable {
      *
      * @return The list of unscheduled events in this timetable. Returns null if all events in this timetable are not
      * set (added).
+     * @throws NullPointerException If an event is missing.
      */
-    ArrayList<Event> getUnscheduledEvents() {
+    ArrayList<Event> getUnscheduledEvents() throws NullPointerException {
         ArrayList<Event> unScheduledEvents = new ArrayList<>();
         for (Event event : events)
             if (!event.isScheduled()) unScheduledEvents.add(event);
         return unScheduledEvents;
+    }
+
+    /**
+     * Returns the length of the days boolean arrays of the timetable events.
+     *
+     * @return Events.getTimeAssignment().getTime().getDays().length.
+     * @throws IllegalArgumentException If the days boolean arrays of events are of different lengths.
+     */
+    public int getDaysLength() throws IllegalArgumentException {
+        final int daysLength = getEvent(0).getTimeAssignment().getTime().getDays().length;
+
+        //TODO OPTIMIZATION: For faster running time, comment the following if. However, doing so will result in
+        // incorrect operation of this method. Make sure that the given boolean arrays ALWAYS have same lengths before
+        // removing this check.
+        for (Event e : getEvents())
+            if (e.getTimeAssignment().getTime().getDays().length != daysLength)
+                throw new IllegalArgumentException("Events in the timetable have days boolean arrays of different "
+                        + "lengths");
+        // COMMENT UNTIL HERE
+
+        return daysLength;
+    }
+
+    /**
+     * Returns the length of the weeks boolean arrays of the timetable events.
+     *
+     * @return Events.getTimeAssignment().getTime().getWeeks().length.
+     * @throws IllegalArgumentException If the weeks boolean arrays of events are of different lengths.
+     */
+    public int getWeeksLength() throws IllegalArgumentException {
+        final int weeksLength = getEvent(0).getTimeAssignment().getTime().getWeeks().length;
+
+        //TODO OPTIMIZATION: For faster running time, comment the following if. However, doing so will result in
+        // incorrect operation of this method. Make sure that the given boolean arrays ALWAYS have same lengths before
+        // removing this check.
+        for (Event e : getEvents())
+            if (e.getTimeAssignment().getTime().getWeeks().length != weeksLength)
+                throw new IllegalArgumentException("Events in the timetable have weeks boolean arrays of different "
+                        + "lengths");
+        // COMMENT UNTIL HERE
+
+        return weeksLength;
     }
 }

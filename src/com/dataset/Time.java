@@ -78,7 +78,7 @@ public class Time {
      *
      * @return length.
      */
-    int getLength() {
+    public int getLength() {
         return length;
     }
 
