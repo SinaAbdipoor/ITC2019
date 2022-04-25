@@ -3,8 +3,6 @@ package com.dataset.constraints;
 import com.dataset.Class;
 import com.utils.Timetable;
 
-import java.util.ArrayList;
-
 /**
  * This class represents the Distribution Constraint (C16): MaxDays(D): Given classes cannot spread over more than D
  * days of the week, regardless whether they are in the same week of semester or not. This means that the total number
@@ -16,7 +14,7 @@ import java.util.ArrayList;
  * Created by Sina on 29-Mar-22
  *
  * @author Sina
- * @version 0.2
+ * @version 0.3
  */
 class MaxDays extends DistributionConstraint {
     private final int maxDays;
@@ -57,13 +55,5 @@ class MaxDays extends DistributionConstraint {
                 }
         }
         return (trueCounter <= maxDays) ? 0 : (trueCounter - maxDays);
-    }
-
-    @Override
-    ArrayList<Violation> getViolations(Timetable timetable) {
-        ArrayList<Violation> violations = new ArrayList<>();
-        if (!isSatisfied(timetable))
-            violations.add(new Violation(null, null, this));
-        return violations;
     }
 }

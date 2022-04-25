@@ -15,7 +15,7 @@ import java.util.Arrays;
  * Created by Sina on 10-Mar-22
  *
  * @author Sina
- * @version 0.4
+ * @version 0.5
  */
 abstract class DistributionConstraint {
     private final Class[] classes;
@@ -70,5 +70,9 @@ abstract class DistributionConstraint {
      * @return Violations list.
      * @throws NullPointerException If a given timetable is not fully scheduled.
      */
-    abstract ArrayList<Violation> getViolations(Timetable timetable) throws NullPointerException;
+    ArrayList<Violation> getViolations(Timetable timetable) throws NullPointerException {
+        ArrayList<Violation> violations = new ArrayList<>();
+        if (!isSatisfied(timetable)) violations.add(new Violation(null, null, this));
+        return violations;
+    }
 }

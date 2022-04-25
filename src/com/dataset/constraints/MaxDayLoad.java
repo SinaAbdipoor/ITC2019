@@ -3,8 +3,6 @@ package com.dataset.constraints;
 import com.dataset.Class;
 import com.utils.Timetable;
 
-import java.util.ArrayList;
-
 /**
  * This class represents the Distribution Constraint (C17): MaxDayLoad(S): Given classes must be spread over the days
  * of the week (and weeks) in a way that there is no more than a given number of S time slots on every day. This means
@@ -20,7 +18,7 @@ import java.util.ArrayList;
  * Created by Sina on 29-Mar-22
  *
  * @author Sina
- * @version 0.1
+ * @version 0.2
  */
 class MaxDayLoad extends DistributionConstraint {
 
@@ -68,12 +66,5 @@ class MaxDayLoad extends DistributionConstraint {
                 total += Math.max(dayLoad - maxTimeslots, 0);
             }
         return total;
-    }
-
-    @Override
-    ArrayList<Violation> getViolations(Timetable timetable) throws NullPointerException {
-        ArrayList<Violation> violations = new ArrayList<>();
-        if (!isSatisfied(timetable)) violations.add(new Violation(null, null, this));
-        return violations;
     }
 }
